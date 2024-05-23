@@ -79,6 +79,7 @@ fastlane/sign&cert
 # CSV
 *.orig
 .svn
+.env
 
 # Other
 *~

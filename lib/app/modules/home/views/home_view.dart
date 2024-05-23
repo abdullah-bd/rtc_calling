@@ -1,3 +1,4 @@
+import 'package:agora_uikit/agora_uikit.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -9,15 +10,15 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('HomeView'),
-        centerTitle: true,
-      ),
-      body: const Center(
-        child: Text(
-          'HomeView is working',
-          style: TextStyle(fontSize: 20),
-        ),
+
+      body:SafeArea(
+          child: Stack(
+            children: [
+              AgoraVideoViewer(client: controller.client,layoutType: Layout.oneToOne,),
+              AgoraVideoButtons(client: controller.client,autoHideButtons: true,),
+            ],
+          ),
+
       ),
     );
   }
